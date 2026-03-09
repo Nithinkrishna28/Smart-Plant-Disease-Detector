@@ -1,20 +1,50 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Plant Disease Detector</title>
+<title>Smart Plant Disease Detector</title>
 </head>
 
 <body>
 
-<h2>Smart Plant Disease Detector</h2>
+<h2>Smart Plant Disease Detector 🌱</h2>
 
 <p>Upload a plant leaf image</p>
 
-<input type="file">
+<input type="file" id="imageInput">
 
-<button>Analyze</button>
+<br><br>
 
-<p>Result will appear here</p>
+<button onclick="analyze()">Analyze Leaf</button>
+
+<p id="result"></p>
+
+<script>
+
+function analyze() {
+
+const diseases = [
+"Powdery Mildew",
+"Leaf Spot",
+"Bacterial Blight"
+]
+
+const treatments = [
+"Use neem oil spray every 7 days.",
+"Remove infected leaves and apply fungicide.",
+"Apply copper based pesticide."
+]
+
+let index = Math.floor(Math.random() * diseases.length)
+
+document.getElementById("result").innerText =
+"Disease Detected: " + diseases[index] +
+"\nTreatment: " + treatments[index]
+
+}
+
+</script>
 
 </body>
+
 </html>
